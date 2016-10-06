@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 //import Main from './components/main';
 var Main = require('Main');
+var Timer = require("Timer");
+var Countdown = require("Countdown");
 
 
 //by default require does not know how to load css files so 
@@ -21,9 +23,10 @@ ReactDOM.render(
 		then IndexRoute will be the default page.
 		*/}
 		<Route path = "/" component={Main}>
+			<Route path = "countdown" component={Countdown}/>
+			<IndexRoute component={Timer}/>
 		</Route>
 	</Router>
-	</div>
-	, 
+	</div>, 
 	document.getElementById("element")
 );

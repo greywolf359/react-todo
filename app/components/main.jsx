@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 var Navbar = require("Navbar");
 
+
 var Main = (props)=>{
 	return (
 		<div>

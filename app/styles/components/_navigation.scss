@@ -15,4 +15,9 @@
 		display: inline;
 		padding-left: 8px;
 	}
+
+	.active-link{
+		font-weight: bold;
+		color: $nav-text-color;
+	}
 }

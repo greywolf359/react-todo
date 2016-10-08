@@ -32,4 +32,14 @@ describe("countdownform",()=>{
 		testUtils.Simulate.submit($el.find('form')[0]);
 		expect(spy).toNotHaveBeenCalled();
 	})
+
+	it('should be called at least with once 12345', () =>{
+		var spy = expect.createSpy();
+		var countdownform = testUtils.renderIntoDocument(<CountdownForm onSetCountdown={spy}/>);
+		var $el = $(ReactDOM.findDOMNode(countdownform));
+		countdownform.refs.seconds.value = "12345";
+		testUtils.Simulate.submit($el.find('form')[0]);
+		expect(spy).toHaveBeenCalled();
+
+	})
 });

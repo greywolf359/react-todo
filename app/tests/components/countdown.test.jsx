@@ -23,9 +23,8 @@ describe("Clock Countdown", ()=>{
 				done();
 			}, 1001)
 		});
-	});
 
-	describe('handlesetcountdown', ()=>{
+
 		it("something about a negative number", ()=>{
 			var countdown = testUtils.renderIntoDocument(<Countdown/>);
 			countdown.handleSetCountdown(1);
@@ -35,5 +34,29 @@ describe("Clock Countdown", ()=>{
 				done();
 			}, 3001)
 		});
+
+		
+		it("should pause countdown on paused status", ()=>{
+			var countdown = testUtils.renderIntoDocument(<Countdown/>);
+			countdown.handleSetCountdown(3);
+			countdown.handleStatusChange('paused');
+			setTimeout(()=>{
+				expect(countdown.status.count).toBe(3);
+				expect(countdown.state.countdownStatus).toBe('paused');
+				done();
+			}, 1001)
+		});
+
+		it("should stop countdown on stopped status", ()=>{
+			var countdown = testUtils.renderIntoDocument(<Countdown/>);
+			countdown.handleSetCountdown(3);
+			countdown.handleStatusChange('stopped');
+
+			setTimeout(()=>{
+				expect(countdown.status.count).toBe(0);
+				expect(countdown.state.countdownStatus).toBe('stopped');
+				done();
+			}, 1001)
+		})
 	});
 });

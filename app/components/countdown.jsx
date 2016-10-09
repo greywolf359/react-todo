@@ -17,14 +17,13 @@ var Timer = React.createClass({
 				case 'started':
 				this.startTimer();
 				break;
-				case 'paused':
-				clearInterval(this.timer);
-				this.timer = undefined;
-				break;
 				case 'stopped':
 				this.setState({count: 0});
+				case 'paused':
+				clearInterval(this.timer);//stops the interval
+				this.timer = undefined;//clears out this.timer
 				break;
-
+				
 			}
 		}
 
@@ -41,12 +40,14 @@ var Timer = React.createClass({
 		this.timer = setInterval(()=>{
 			var newCount = this.state.count - 1;
 			this.setState({
-				count: newCount >= 0 ? newCount:0
+				count: newCount >= 0 ? newCount : 0
 			})
 
+			
 			if (newCount === 0) {
 				this.setState({countdownStatus: "stopped"});
 			}
+			
 		}, 1000);
 	},
 
@@ -72,6 +73,7 @@ var Timer = React.createClass({
 		}
 		return(
 			<div>
+				<h1 className = "page-title">Countdown App</h1>
 				<Clock totalSeconds = {count}/>
 				{renderControlArea()}
 			</div>

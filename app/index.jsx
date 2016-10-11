@@ -10,7 +10,7 @@ var Countdown = require("Countdown");
 
 //by default require does not know how to load css files so 
 //you must use the css loader css! and then inject it using style!
-require('style!css!foundation-sites/dist/foundation.min.css');
+//require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 require('style!css!sass!applicationStyles');
 

@@ -34,7 +34,7 @@ module.exports = {
 			},
 			resolve: {
 				root: __dirname,
-				alias: {
+			alias: {
 					Main: 'app/components/main.jsx',
 					applicationStyles: 'app/styles/app.scss',
 					Navbar: 'app/components/nav.jsx',
@@ -45,6 +45,12 @@ module.exports = {
 					Controls: 'app/components/controls.jsx'
 				},
 				extensions: ['', '.js', '.jsx']
+			},
+
+			sassLoader: {
+				includePaths: [
+					path.resolve(__dirname, './node_modules/foundation-sites/scss')
+				]
 			},
 
 			devtool: 'cheap-module-eval-source-map'

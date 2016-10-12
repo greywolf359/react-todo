@@ -1,5 +1,5 @@
 import React from "react";
-var Todo = require("todo");
+var Todo = require("Todo");
 
 var TodoList = React.createClass({
 

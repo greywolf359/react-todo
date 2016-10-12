@@ -34,12 +34,15 @@ module.exports = {
 			},
 			resolve: {
 				root: __dirname,
-				modulesDirectories: [
+				//webpack will always look in components by default
+				//rather than typing out tons of aliases
+				modulesDirectories: [ 
 					'node_modules',
 					'./app/components'
 				],
+			//alias - makes it easier to definre components
 			alias: {
-					Main: 'app/components/main.jsx',
+					//Main: 'app/components/main.jsx',
 					applicationStyles: 'app/styles/app.scss'
 				},
 				extensions: ['', '.js', '.jsx']

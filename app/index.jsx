@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 //import Main from './components/main';
+var TodoApp = require('TodoApp');
 
 
 
@@ -14,7 +15,7 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 	<div>
-	<p>Boilerplate 3 project</p>
+	<TodoApp/>
 	</div>, 
 	document.getElementById("element")
 );

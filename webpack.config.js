@@ -38,7 +38,8 @@ module.exports = {
 				//rather than typing out tons of aliases
 				modulesDirectories: [ 
 					'node_modules',
-					'./app/components'
+					'./app/components',
+					'./app/api'
 				],
 			//alias - makes it easier to definre components
 			alias: {

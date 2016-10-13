@@ -14,6 +14,7 @@ describe("TodoList",()=>{
 	it("should render once todo component for each todo item",()=>{
 		var todos = [{id: 1, todo: "do something"}, {id: 2, todo: "checkmail"}];
 		var todoList = TestUtils.renderIntoDocument(<TodoList todos = {todos}/>);
+		//checks to see how many components are rendered under another component(parentComp, childComp)
 		var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
 
 		expect(todosComponents.length).toBe(todos.length);

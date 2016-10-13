@@ -1,7 +1,12 @@
 import React from "react";
 var Todo = require("Todo");
+var AddTodo = require("AddTodo");
 
 var TodoList = React.createClass({
+
+	handleAddTodo: function(text){
+		alert(text);
+	},
 
 	render: function(){
 		var {todos} = this.props;
@@ -14,7 +19,10 @@ var TodoList = React.createClass({
 			})
 		}
 		return(
-			<div>{renderTodos()}</div>
+			<div>
+				{renderTodos()}
+				<AddTodo onAddTodo={this.handleAddTodo}/>
+			</div>
 		)
 	}
 })

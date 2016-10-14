@@ -20,4 +20,13 @@ describe("TodoList",()=>{
 		expect(todosComponents.length).toBe(todos.length);
 
 	})
+
+	it("should render no todos if todos is empty",()=>{
+		var todos = [];
+		var todoList = TestUtils.renderIntoDocument(<TodoList todos = {todos}/>);
+		//checks to see how many components are rendered under another component(parentComp, childComp)
+		var $el = $(ReactDOM.findDOMNode(todoList));
+		expect($el.find('.container_message').length).toBe(1);
+
+	})
 });

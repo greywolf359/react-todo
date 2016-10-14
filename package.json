@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.14.0",
     "express": "^4.14.0",
+    "moment": "^2.15.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1"
@@ -33,6 +34,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "mocha": "^3.1.0",
+    "moment": "^2.15.1",
     "node-sass": "^3.10.1",
     "node-uuid": "^1.4.7",
     "react-addons-test-utils": "^15.3.2",

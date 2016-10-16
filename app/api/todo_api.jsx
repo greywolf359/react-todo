@@ -24,11 +24,12 @@ module.exports = {
 
 	filterTodos: function(todos, showCompleted, searchText){
 		var filteredTodos = todos;
-		//filter by show completed
+		//filter by show completed - return the todo only if todo.completed is true
+		//or showCompleted is true
 		filteredTodos = filteredTodos.filter((todo)=>{
 			return !todo.completed || showCompleted;
 		})
-		//filter by searchtext
+		//filter by searchtext - filter only if indexof = -1
 		filteredTodos = filteredTodos.filter((todo)=>{
 			if(todo.todo.indexOf(searchText.toLowerCase()) !== -1){
 				return todo;

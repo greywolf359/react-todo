@@ -1,12 +1,13 @@
 import React from "react";
-var Todo = require("Todo");
+import {connect} from "react-redux";
+import Todo from 'todo';
 
 
-var TodoList = React.createClass({
+export var TodoList = React.createClass({
 
 	
 	render: function(){
-		var {todos, onToggle} = this.props;
+		var {todos} = this.props;
 
 
 
@@ -16,7 +17,7 @@ var TodoList = React.createClass({
 				}
 			return todos.map((todo)=>{
 				return(
-					<Todo key = {todo.id} {...todo} onToggle={onToggle}/>
+					<Todo key = {todo.id} {...todo}/>
 				)
 			})
 		}
@@ -29,4 +30,12 @@ var TodoList = React.createClass({
 	}
 })
 
-module.exports = TodoList;
+export default connect(
+	(state)=>{
+		return{
+			//this will give the component todolist access to the props todos
+			//instead of passing it through as an attribute from the parent
+			todos: state.todos
+		}
+	}
+	)(TodoList);

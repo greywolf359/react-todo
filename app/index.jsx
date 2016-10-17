@@ -2,8 +2,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
+import {Provider} from 'react-redux';
 //import Main from './components/main';
 var TodoApp = require('TodoApp');
+
 
 var actions = require('actions');
 var store = require('configureStore').configure();
@@ -27,7 +29,9 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 	<div>
-	<TodoApp/>
+	<Provider store = {store}>
+		<TodoApp/>
+	</Provider>
 	</div>, 
 	document.getElementById("element")
 );

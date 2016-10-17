@@ -8,9 +8,11 @@ export var configure = ()=>{
 		todos: todoReducer
 	});
 	
-
+	console.log(typeof reducer);
 	var store = redux.createStore(reducer, redux.compose(
 		window.devToolsExtension ? window.devToolsExtension : f => f
 	));
+
+	debugger;
 	return store;
 }

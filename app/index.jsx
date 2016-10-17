@@ -5,6 +5,18 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 //import Main from './components/main';
 var TodoApp = require('TodoApp');
 
+var actions = require('actions');
+var store = require('configureStore').configure();
+
+store.subscribe(()=>{
+	console.log("new state", store.getState());
+});
+
+store.dispatch(actions.addTodo("walk the dog"));
+
+store.dispatch(actions.setSearchText("yard"));
+store.dispatch(actions.toggleShowCompleted());
+
 
 
 //by default require does not know how to load css files so 

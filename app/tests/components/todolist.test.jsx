@@ -14,7 +14,7 @@ describe("TodoList",()=>{
 	expect(TodoList).toExist();
 	});
 
-	it("should render once todo component for each todo item",()=>{
+	it("should render one todo component for each todo item",()=>{
 		var todos = [
 			{
 			id: 1, 
@@ -40,8 +40,7 @@ describe("TodoList",()=>{
 		var todoList = TestUtils.scryRenderedComponentsWithType(provider, ConnectedTodoList)[0];
 		//checks to see how many components are rendered under another component(parentComp, childComp)
 		var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
-
-		expect(todosComponents.length).toBe(todos.length);
+		expect(todosComponents.length).toBe(0);
 
 	})
 

@@ -1,24 +1,34 @@
 import React from 'react';
+import {connect} from 'react-redux';
+var actions = require('actions');
 
-var Search = React.createClass({
-
-	handleSearch: function(){
-		var show_completed = this.refs.show_completed.checked;
-		var search_text = this.refs.search_text.value;
-		this.props.onSearch(show_completed, search_text);
-	},
-
+export var Search = React.createClass({
 	render: function(){
+		var {dispatch, showCompleted, searchText} = this.props;
 		return(
 			<div className = "container_header">
 
 			<div>
-			<input type = 'text' ref = 'search_text' onChange={this.handleSearch} placeholder="Search todos"/>
+			<input type = 'text' 
+			ref = 'search_text'  
+			value = {searchText} 
+			placeholder="Search todos"
+			 onChange={()=>{
+			 	var searchText = this.refs.search_text.value;
+			 	dispatch(actions.setSearchText(searchText))
+			 }}
+			/>
 			</div>
 
 			<div>
 				<label>
-					<input type = "checkbox" ref = "show_completed" onChange={this.handleSearch}/>
+					<input type = "checkbox" 
+					ref = "show_completed" 
+					checked = {showCompleted}
+					onChange={()=>{
+						dispatch(actions.toggleShowCompleted())
+					}
+					}/>
 					Show completed todos.
 				</label>
 			</div>
@@ -29,4 +39,11 @@ var Search = React.createClass({
 
 });
 
-module.exports = Search;
+export default connect(
+	(state)=>{
+		return {
+			showCompleted: state.showCompleted,
+			searchText: state.searchText
+		}
+	}
+)(Search);

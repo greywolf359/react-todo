@@ -29,12 +29,17 @@ module.exports = {
 		filteredTodos = filteredTodos.filter((todo)=>{
 			return !todo.completed || showCompleted;
 		})
+
+		console.log('filteredTodos after showcomplete', filteredTodos);
 		//filter by searchtext - filter only if indexof = -1
-		filteredTodos = filteredTodos.filter((todo)=>{
-			if(todo.todo.indexOf(searchText.toLowerCase()) !== -1){
-				return todo;
-			}
+		filteredTodos = filteredTodos.filter((todos)=>{
+			var text = todos.todo.toLowerCase();
+			return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
+			//if(todo.todo.indexOf(searchText.toLowerCase()) !== -1){
+				//return todo;
+			//}
 		})
+		console.log('filteredTodos after searchtext', filteredTodos);
 		//sort todos with noncompleted first
 		filteredTodos.sort((a,b)=>{
 			if(!a.completed && b.completed){
@@ -45,6 +50,7 @@ module.exports = {
 				return 0;
 			}
 		})
+		console.log('filteredTodos after noncom first: ', filteredTodos);
 		return filteredTodos;
 	}
 

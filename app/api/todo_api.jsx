@@ -23,6 +23,7 @@ module.exports = {
 	},
 
 	filterTodos: function(todos, showCompleted, searchText){
+		console.log("todos recieved by filtertodos: ", todos);
 		var filteredTodos = todos;
 		//filter by show completed - return the todo only if todo.completed is true
 		//or showCompleted is true
@@ -30,7 +31,7 @@ module.exports = {
 			return !todo.completed || showCompleted;
 		})
 
-		console.log('filteredTodos after showcomplete', filteredTodos);
+		
 		//filter by searchtext - filter only if indexof = -1
 		filteredTodos = filteredTodos.filter((todos)=>{
 			var text = todos.todo.toLowerCase();
@@ -39,7 +40,7 @@ module.exports = {
 				//return todo;
 			//}
 		})
-		console.log('filteredTodos after searchtext', filteredTodos);
+		
 		//sort todos with noncompleted first
 		filteredTodos.sort((a,b)=>{
 			if(!a.completed && b.completed){
@@ -50,7 +51,7 @@ module.exports = {
 				return 0;
 			}
 		})
-		console.log('filteredTodos after noncom first: ', filteredTodos);
+		
 		return filteredTodos;
 	}
 

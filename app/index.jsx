@@ -3,23 +3,20 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import {Provider} from 'react-redux';
-//import Main from './components/main';
 var TodoApp = require('TodoApp');
-
-
 var actions = require('actions');
 var store = require('configureStore').configure();
+var todoAPI = require("todo_api");
 
 store.subscribe(()=>{
-	console.log("new state", store.getState());
+	var state = store.getState();
+	console.log("new state", state);
+	todoAPI.setTodos(state.todos);
 });
 
-store.dispatch(actions.addTodo("walk the dog"));
-
-store.dispatch(actions.setSearchText("yard"));
-store.dispatch(actions.toggleShowCompleted());
-
-
+var initialTodos = todoAPI.getTodos();
+console.log("initialTodos", initialTodos)
+store.dispatch(actions.addTodos(initialTodos));
 
 //by default require does not know how to load css files so 
 //you must use the css loader css! and then inject it using style!

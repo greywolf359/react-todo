@@ -15,7 +15,7 @@ export var searchTextReducer = (state = '', action)=>{
 }
 */
 
-export var searchTextReducer = (state = 'anon', action) => {
+export var searchTextReducer = (state = '', action) => {
   switch (action.type) {
     case 'SET_SEARCH_TEXT':
       return action.searchText;
@@ -57,6 +57,11 @@ export var todoReducer = (state = [], action) =>{
 					return todo;
 				}
 			});
+		case 'ADD_TODOS':
+			return[
+				...state,
+				...action.todos
+			]
 		default: return state;	
 
 

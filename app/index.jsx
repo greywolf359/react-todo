@@ -8,7 +8,7 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var todoAPI = require("todo_api");
 
-console.log("fuccccccccccccccccccccccccccccckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+
 store.subscribe(()=>{
 	var state = store.getState();
 	console.log("new state", state);

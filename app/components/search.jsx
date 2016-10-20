@@ -11,7 +11,7 @@ export var Search = React.createClass({
 			<div>
 			<input type = 'text' 
 			ref = 'search_text'  
-			value = '' 
+			value = {searchText} 
 			placeholder="Search todos"
 			 onChange={()=>{
 			 	var searchText = this.refs.search_text.value;

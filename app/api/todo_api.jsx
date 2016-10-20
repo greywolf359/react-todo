@@ -33,8 +33,9 @@ module.exports = {
 
 		
 		//filter by searchtext - filter only if indexof = -1
-		filteredTodos = filteredTodos.filter((todos)=>{
-			var text = todos.todo.toLowerCase();
+		filteredTodos = filteredTodos.filter((todos_obj)=>{
+			console.log("todos_obj.todo", todos_obj.todo);
+			var text = todos_obj.todo.toLowerCase();
 			return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
 			//if(todo.todo.indexOf(searchText.toLowerCase()) !== -1){
 				//return todo;

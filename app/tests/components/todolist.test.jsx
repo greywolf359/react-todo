@@ -40,7 +40,7 @@ describe("TodoList",()=>{
 		var todoList = TestUtils.scryRenderedComponentsWithType(provider, ConnectedTodoList)[0];
 		//checks to see how many components are rendered under another component(parentComp, childComp)
 		var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
-		expect(todosComponents.length).toBe(0);
+		expect(todosComponents.length).toBe(2);
 
 	})
 

@@ -43,6 +43,7 @@ module.exports = {
 				],
 			//alias - makes it easier to definre components
 			alias: {
+					app: 'app',
 					//Main: 'app/components/main.jsx',
 					applicationStyles: 'app/styles/app.scss',
 					actions: 'app/actions/actions.jsx',

@@ -36,13 +36,7 @@ export var todoReducer = (state = [], action) =>{
 		case "ADD_TODO":
 			return [
 				...state,
-				{
-					id: uuid(),
-					todo: action.todo,
-					completed: false,
-					createdAt: moment().unix(),
-					completedAt: undefined
-				}
+				action.todo
 			];	
 		case 'TOGGLE_TODO':
 			return state.map((todo)=>{

@@ -35,11 +35,9 @@ module.exports = {
 		//filter by searchtext - filter only if indexof = -1
 		filteredTodos = filteredTodos.filter((todos_obj)=>{
 			console.log("todos_obj.todo", todos_obj.todo);
-			var text = todos_obj.todo_text.toLowerCase();
+			var text = todos_obj.todo.toLowerCase();
 			return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
-			//if(todo.todo.indexOf(searchText.toLowerCase()) !== -1){
-				//return todo;
-			//}
+			
 		})
 		
 		//sort todos with noncompleted first

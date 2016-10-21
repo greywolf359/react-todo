@@ -15,6 +15,7 @@ export var addTodo = (todo)=>{
 	}
 }
 
+//any todos in local storage are added here
 export var addTodos = (todos)=>{
 	return{
 		type: 'ADD_TODOS',
@@ -22,7 +23,10 @@ export var addTodos = (todos)=>{
 	}
 }
 
-export var startAddTodo = (todo)=>{//called from addtodo
+//called from addtodo, is input value is passed in and then it gets put
+//into an object, which is then passed to firebase, and then the app
+//is updated, along with the firebase key for said object
+export var startAddTodo = (todo)=>{
 
 	return (dispatch, getState) =>{
 		var todo_obj = {
@@ -48,14 +52,17 @@ export var toggleShowCompleted = ()=>{
 
 }
 
+//called from startToggleTodo
 export var updateTodo = (id, updates)=>{
 	return {
 		type: 'UPDATE_TODO',
 		id,
-		updates
+		updates //contains completed flag and completed at time, passed to store
 	}
 }
 
+//called from todo.jsx - updates completed bool flag and completedAt time
+//updates firebase then updates the state
 export var startToggleTodo = (id, completed)=>{
 	return (dispatch, getState)=>{
 		var todoRef = firebaseRef.child(`todos/${id}`);
@@ -66,7 +73,7 @@ export var startToggleTodo = (id, completed)=>{
 
 		todoRef.update(updates).then(()=>{
 			dispatch(updateTodo(id, updates));
-		})
+		});
 	}
 }
 

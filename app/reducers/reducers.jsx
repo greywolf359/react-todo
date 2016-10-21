@@ -31,6 +31,9 @@ export var showCompletedReducer = (state = false, action)=>{
 	}
 }
 
+//when you use one spread operator after another, everything in the second
+//will override any that are in the first one, props that arent in one but in the other
+//will still be around
 export var todoReducer = (state = [], action) =>{
 	switch(action.type){
 		case "ADD_TODO":
@@ -41,10 +44,10 @@ export var todoReducer = (state = [], action) =>{
 		case 'UPDATE_TODO':
 			return state.map((todo)=>{
 				if(todo.id === action.id){
-					var nextCompleted = !todo.completed;
+					
 					return {
 						...todo,
-						...action.updates
+						...action.updates//received from action, contains completed flag and completed time
 					};
 				}else{
 					return todo;

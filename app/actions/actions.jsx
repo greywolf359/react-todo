@@ -23,6 +23,36 @@ export var addTodos = (todos)=>{
 	}
 }
 
+//load any data in firebase upon app loading
+//id key to id prop, object.keys()
+export var startAddTodos = ()=>{
+	return(dispatch, getState)=>{
+		var todosRef = firebaseRef.child('todos');
+		todosRef.once('value', (snapshot)=>{
+		
+		var todos = snapshot.val() || {};
+		var parsedTodos = [];
+		var keys = Object.keys(todos);
+		
+		
+		keys.forEach((todoId) =>{
+			parsedTodos.push({
+				id: todoId,
+				...todos[todoId]
+			})
+		});
+		
+		
+		dispatch(addTodos(parsedTodos));
+		
+		}, (e)=>{
+			console.log("error", e);
+		});
+
+		
+	}
+}
+
 //called from addtodo, is input value is passed in and then it gets put
 //into an object, which is then passed to firebase, and then the app
 //is updated, along with the firebase key for said object

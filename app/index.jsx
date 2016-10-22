@@ -9,16 +9,8 @@ var store = require('configureStore').configure();
 var todoAPI = require("todo_api");
 
 
-store.subscribe(()=>{
-	var state = store.getState();
-	console.log("new state", state);
-	todoAPI.setTodos(state.todos);
-});
 
-var initialTodos = todoAPI.getTodos();
-console.log("initialTodos", initialTodos)
-store.dispatch(actions.addTodos(initialTodos));
-
+store.dispatch(actions.startAddTodos());
 //by default require does not know how to load css files so 
 //you must use the css loader css! and then inject it using style!
 //require('style!css!foundation-sites/dist/foundation.min.css');

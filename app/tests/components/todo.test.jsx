@@ -4,8 +4,7 @@ import ReactDOM from "react-dom";
 import React from "react";
 import * as actions from 'actions';
 var $ = require("jQuery");
-import Todo from "todo";
-
+import {Todo} from "todo";
 
 describe("Todo",()=>{
 	it("should exist", ()=>{
@@ -24,7 +23,7 @@ describe("Todo",()=>{
 		var spy = expect.createSpy();
 		
 		var todo = testUtils.renderIntoDocument(<Todo {...todo_data} dispatch={spy}/>);
-		console.log("TEST 2")
+		
 		var $el = $(ReactDOM.findDOMNode(todo));
 
 		testUtils.Simulate.click($el[0]);

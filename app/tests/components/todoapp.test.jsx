@@ -4,7 +4,8 @@ import ReactDOM from "react-dom";
 import React from "react";
 import {Provider} from 'react-redux';
 var $ = require("jQuery");
-var TodoApp = require("TodoApp");
+import {TodoApp} from 'todoapp';
+//var TodoApp = require("TodoApp");
 var Todo = require("Todo");
 
 var configureStore = require('configureStore');

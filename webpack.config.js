@@ -64,7 +64,7 @@ module.exports = {
 					path.resolve(__dirname, './node_modules/foundation-sites/scss')
 				]
 			},
-
+			//if node_env is prouction then set devtool to undefined, else set to source map
 			devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map'
 
 

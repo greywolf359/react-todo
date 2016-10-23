@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import {Provider} from 'react-redux';
-var TodoApp = require('TodoApp');
+var TodoApp = require('todoapp');
 var actions = require('actions');
 var store = require('configureStore').configure();
 var todoAPI = require("todo_api");

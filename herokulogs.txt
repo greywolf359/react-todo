@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2016-10-17T20:17:34.097295+00:00 heroku[api]: Deploy 7ab9253 by chintaka221@yahoo.com
 2016-10-17T20:17:34.294104+00:00 heroku[slug-compiler]: Slug compilation started
 2016-10-17T20:17:34.294109+00:00 heroku[slug-compiler]: Slug compilation finished
@@ -97,4 +98,105 @@
 2016-10-22T02:59:14.986360+00:00 heroku[web.1]: Idling
 2016-10-22T02:59:14.987038+00:00 heroku[web.1]: State changed from up to down
 2016-10-22T02:59:16.949107+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+=======
+2016-10-17T20:17:34.097295+00:00 heroku[api]: Deploy 7ab9253 by chintaka221@yahoo.com
+2016-10-17T20:17:34.294104+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-17T20:17:34.294109+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-17T20:17:34.408988+00:00 heroku[web.1]: State changed from down to starting
+2016-10-17T20:17:36.671294+00:00 heroku[web.1]: Starting process with command `npm start`
+2016-10-17T20:17:40.709346+00:00 app[web.1]: express server is up on port 22910
+2016-10-17T20:17:40.326678+00:00 app[web.1]:
+2016-10-17T20:17:40.326703+00:00 app[web.1]: > boilerplate@1.0.0 start /app
+2016-10-17T20:17:40.326704+00:00 app[web.1]: > node server.js
+2016-10-17T20:17:40.326704+00:00 app[web.1]:
+2016-10-17T20:17:41.091501+00:00 heroku[web.1]: State changed from starting to up
+2016-10-17T20:51:26.140525+00:00 heroku[web.1]: Idling
+2016-10-17T20:51:26.141204+00:00 heroku[web.1]: State changed from up to down
+2016-10-17T20:51:29.595292+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-10-17T20:51:30.562113+00:00 heroku[web.1]: Process exited with status 143
+2016-10-22T01:53:04.812293+00:00 heroku[api]: Deploy 24c9b59 by chintaka221@yahoo.com
+2016-10-22T01:53:04.812389+00:00 heroku[api]: Release v13 created by chintaka221@yahoo.com
+2016-10-22T01:53:04.976724+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-22T01:53:04.976729+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-22T01:53:05.078788+00:00 heroku[web.1]: State changed from down to starting
+2016-10-22T01:53:08.615515+00:00 heroku[web.1]: Starting process with command `npm start`
+2016-10-22T01:53:11.595205+00:00 app[web.1]:
+2016-10-22T01:53:11.595223+00:00 app[web.1]: > boilerplate@1.0.0 start /app
+2016-10-22T01:53:11.595224+00:00 app[web.1]: > npm run build && node server.js
+2016-10-22T01:53:11.595225+00:00 app[web.1]:
+2016-10-22T01:53:12.295336+00:00 app[web.1]:
+2016-10-22T01:53:12.295347+00:00 app[web.1]: > boilerplate@1.0.0 build /app
+2016-10-22T01:53:12.295348+00:00 app[web.1]: > webpack
+2016-10-22T01:53:12.295349+00:00 app[web.1]:
+2016-10-22T01:53:48.876549+00:00 app[web.1]: Hash: 6ac67b93018662de9f35
+2016-10-22T01:53:48.876554+00:00 app[web.1]: Version: webpack 1.13.2
+2016-10-22T01:53:48.876555+00:00 app[web.1]: Time: 36082ms
+2016-10-22T01:53:48.876556+00:00 app[web.1]:              Asset     Size  Chunks             Chunk Names
+2016-10-22T01:53:48.876557+00:00 app[web.1]: ./public/bundle.js  1.15 MB       0  [emitted]  main
+2016-10-22T01:53:48.876558+00:00 app[web.1]:    [0] multi main 52 bytes {0} [built]
+2016-10-22T01:53:48.876559+00:00 app[web.1]:     + 408 hidden modules
+2016-10-22T01:53:48.876559+00:00 app[web.1]:
+2016-10-22T01:53:48.876560+00:00 app[web.1]: ERROR in ./app/index.jsx
+2016-10-22T01:53:48.876562+00:00 app[web.1]:  @ ./app/index.jsx 18:14-32
+2016-10-22T01:53:48.876561+00:00 app[web.1]: Module not found: Error: Cannot resolve module 'TodoApp' in /app/app
+2016-10-22T01:53:49.211747+00:00 app[web.1]: express server is up on port 26081
+2016-10-22T01:53:49.679101+00:00 heroku[web.1]: State changed from starting to up
+2016-10-22T01:55:14.901222+00:00 heroku[router]: at=info method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=cacda818-0331-4dd1-ad3a-b17d358a31f8 fwd="76.28.220.235" dyno=web.1 connect=1ms service=15ms status=302 bytes=346
+2016-10-22T01:55:15.188408+00:00 heroku[router]: at=info method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=7009872b-ad7a-48ce-b54b-6d61c1b89cd1 fwd="76.28.220.235" dyno=web.1 connect=1ms service=12ms status=200 bytes=477
+2016-10-22T01:55:15.629021+00:00 heroku[router]: at=info method=GET path="/bundle.js" host=calm-eyrie-36732.herokuapp.com request_id=b58015f5-0e32-43d5-82fd-e22ae43dd355 fwd="76.28.220.235" dyno=web.1 connect=1ms service=34ms status=200 bytes=1178489
+2016-10-22T01:55:21.322684+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=calm-eyrie-36732.herokuapp.com request_id=38c903c6-0d43-40cd-a769-4caa8e5064fe fwd="76.28.220.235" dyno=web.1 connect=1ms service=4ms status=404 bytes=222
+2016-10-22T01:55:21.528109+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=calm-eyrie-36732.herokuapp.com request_id=4ce37cd5-f407-484d-a7d6-3d3a2e365475 fwd="76.28.220.235" dyno=web.1 connect=1ms service=2ms status=404 bytes=222
+2016-10-22T02:04:38.823177+00:00 heroku[router]: at=info method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=1d8ab999-2afc-400a-9427-9e4c8d18f448 fwd="76.28.220.235" dyno=web.1 connect=3ms service=4ms status=304 bytes=236
+2016-10-22T02:04:39.392299+00:00 heroku[router]: at=info method=GET path="/bundle.js" host=calm-eyrie-36732.herokuapp.com request_id=571ef5e6-1ba4-41d0-9619-d6c85cdb8818 fwd="76.28.220.235" dyno=web.1 connect=2ms service=3ms status=304 bytes=240
+2016-10-22T02:20:35.094456+00:00 heroku[api]: Deploy bc69adf by chintaka221@yahoo.com
+2016-10-22T02:20:35.094456+00:00 heroku[api]: Release v14 created by chintaka221@yahoo.com
+2016-10-22T02:20:35.302861+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-22T02:20:35.302870+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-22T02:20:35.353735+00:00 heroku[web.1]: Restarting
+2016-10-22T02:20:35.354460+00:00 heroku[web.1]: State changed from up to starting
+2016-10-22T02:20:38.847903+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-10-22T02:20:39.086185+00:00 heroku[web.1]: Starting process with command `npm start`
+2016-10-22T02:20:39.739486+00:00 heroku[web.1]: Process exited with status 143
+2016-10-22T02:20:42.323872+00:00 app[web.1]:
+2016-10-22T02:20:42.323885+00:00 app[web.1]: > boilerplate@1.0.0 start /app
+2016-10-22T02:20:42.323886+00:00 app[web.1]: > npm run build && node server.js                                          2016-10-22T02:20:42.323886+00:00 app[web.1]:
+2016-10-22T02:20:43.236569+00:00 app[web.1]:
+2016-10-22T02:20:43.236580+00:00 app[web.1]: > boilerplate@1.0.0 build /app
+2016-10-22T02:20:43.236581+00:00 app[web.1]: > webpack
+2016-10-22T02:20:43.236582+00:00 app[web.1]:
+2016-10-22T02:21:39.706434+00:00 heroku[web.1]: Error R10 (Boot timeout) -> Web process failed to bind to $PORT within 60 seconds of launch
+2016-10-22T02:21:39.706490+00:00 heroku[web.1]: Stopping process with SIGKILL
+2016-10-22T02:21:39.887227+00:00 heroku[web.1]: State changed from starting to crashed
+2016-10-22T02:21:39.888048+00:00 heroku[web.1]: State changed from crashed to starting
+2016-10-22T02:21:39.873364+00:00 heroku[web.1]: Process exited with status 137
+2016-10-22T02:21:42.958010+00:00 heroku[web.1]: Starting process with command `npm start`
+2016-10-22T02:21:44.871303+00:00 app[web.1]:
+2016-10-22T02:21:44.871319+00:00 app[web.1]: > boilerplate@1.0.0 start /app
+2016-10-22T02:21:44.871320+00:00 app[web.1]: > npm run build && node server.js
+2016-10-22T02:21:44.871321+00:00 app[web.1]:
+2016-10-22T02:21:45.365868+00:00 app[web.1]:
+2016-10-22T02:21:45.365886+00:00 app[web.1]: > boilerplate@1.0.0 build /app
+2016-10-22T02:21:45.365887+00:00 app[web.1]: > webpack
+2016-10-22T02:21:45.365888+00:00 app[web.1]:
+2016-10-22T02:22:02.074495+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=f49a1a5d-7272-4452-88e3-183d19f78cdc fwd="76.28.220.235" dyno= connect= service= status=503 bytes=
+2016-10-22T02:22:13.039174+00:00 app[web.1]: Hash: 6ac67b93018662de9f35
+2016-10-22T02:22:13.039193+00:00 app[web.1]: Version: webpack 1.13.2
+2016-10-22T02:22:13.039195+00:00 app[web.1]: Time: 27338ms
+2016-10-22T02:22:13.039197+00:00 app[web.1]:              Asset     Size  Chunks             Chunk Names
+2016-10-22T02:22:13.039197+00:00 app[web.1]: ./public/bundle.js  1.15 MB       0  [emitted]  main
+2016-10-22T02:22:13.039198+00:00 app[web.1]:    [0] multi main 52 bytes {0} [built]
+2016-10-22T02:22:13.039199+00:00 app[web.1]:     + 408 hidden modules
+2016-10-22T02:22:13.039200+00:00 app[web.1]:
+2016-10-22T02:22:13.039200+00:00 app[web.1]: ERROR in ./app/index.jsx
+2016-10-22T02:22:13.039201+00:00 app[web.1]: Module not found: Error: Cannot resolve module 'TodoApp' in /app/app
+2016-10-22T02:22:13.039202+00:00 app[web.1]:  @ ./app/index.jsx 18:14-32
+2016-10-22T02:22:13.283065+00:00 app[web.1]: express server is up on port 35181
+2016-10-22T02:22:13.453000+00:00 heroku[web.1]: State changed from starting to up
+2016-10-22T02:22:14.858219+00:00 heroku[router]: at=info method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=f5234b59-f370-4aa0-a321-3f492d9d78ca fwd="76.28.220.235" dyno=web.1 connect=0ms service=20ms status=302 bytes=346
+2016-10-22T02:22:15.668923+00:00 heroku[router]: at=info method=GET path="/" host=calm-eyrie-36732.herokuapp.com request_id=230e2d23-cb36-4ac0-9f14-d27ff1f3d64c fwd="76.28.220.235" dyno=web.1 connect=0ms service=19ms status=200 bytes=477
+2016-10-22T02:22:17.121642+00:00 heroku[router]: at=info method=GET path="/bundle.js" host=calm-eyrie-36732.herokuapp.com request_id=2b63da2a-f513-4b5f-a63d-84e76885dedb fwd="76.28.220.235" dyno=web.1 connect=0ms service=21ms status=200 bytes=1178489
+2016-10-22T02:59:14.986360+00:00 heroku[web.1]: Idling
+2016-10-22T02:59:14.987038+00:00 heroku[web.1]: State changed from up to down
+2016-10-22T02:59:16.949107+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+>>>>>>> 87647642751b539780846da1d041175ac924dfcb
 2016-10-22T02:59:17.499091+00:00 heroku[web.1]: Process exited with status 143

@@ -4,6 +4,10 @@ console.log("firebase", firebase);
 // Initialize Firebase
 
 
+
+
+
+
   var config = {
     apiKey: "AIzaSyAD6Y5kMpDzGjkIm0zOmNjDF08GASgmcsg",
     authDomain: "todoapp-497ef.firebaseapp.com",

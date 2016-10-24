@@ -11,16 +11,14 @@ var store = require('configureStore').configure();
 
 firebase.auth().onAuthStateChanged((user)=>{
 	if(user){
-		hashHistory.push('/todos')
+		store.dispatch(actions.login(user.uid));
+		hashHistory.push('/todos');
 	}else{
+		store.dispatch(actions.logout());
 		hashHistory.push('/');
 	}
 });
 //var TodoApp = require('todoapp.jsx');
-
-
-
-
 
 store.dispatch(actions.startAddTodos());
 //by default require does not know how to load css files so 

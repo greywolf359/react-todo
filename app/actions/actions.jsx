@@ -107,6 +107,7 @@ export var startToggleTodo = (id, completed)=>{
 	}
 }
 
+//called from login.jsx
 export var startLogin = ()=>{
 	return (dispatch, getState)=>{
 		firebase.auth().signInWithPopup(githubProvider).then(

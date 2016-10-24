@@ -1,14 +1,24 @@
 //ENTRY POINT FOR WEBPACK
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Router, IndexRoute, hashHistory} from 'react-router';
+import {hashHistory} from 'react-router';
 import {Provider} from 'react-redux';
-import Login from "login";
-import TodoApp from 'todoapp';
-//var TodoApp = require('todoapp.jsx');
+import firebase from 'app/firebase/';
+import router from 'app/router/';
 var actions = require('actions');
 var store = require('configureStore').configure();
-var todoAPI = require("todo_api");
+
+
+firebase.auth().onAuthStateChanged((user)=>{
+	if(user){
+		hashHistory.push('/todos')
+	}else{
+		hashHistory.push('/');
+	}
+});
+//var TodoApp = require('todoapp.jsx');
+
+
 
 
 
@@ -19,15 +29,12 @@ store.dispatch(actions.startAddTodos());
 $(document).foundation();
 require('style!css!sass!applicationStyles');
 
+
+
 ReactDOM.render(
 	<div>
 	<Provider store = {store}>
-	<Router history = {hashHistory}>
-		<Route path = "/">
-			<Route path = "todos" component = {TodoApp}/>
-			<IndexRoute component = {Login}/>
-		</Route>
-	</Router>
+	{router}
 	</Provider>
 	</div>, 
 	document.getElementById("element")

@@ -7,7 +7,7 @@ export var configure = (initialState = {})=>{
 		searchText: searchTextReducer,
 		showCompleted: showCompletedReducer,
 		todos: todoReducer,
-		authReducer: authReducer
+		auth: authReducer
 	});
 	
 	var store = redux.createStore(reducer, initialState, redux.compose(

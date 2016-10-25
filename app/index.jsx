@@ -11,7 +11,11 @@ var store = require('configureStore').configure();
 
 firebase.auth().onAuthStateChanged((user)=>{
 	if(user){
+		console.log('actions.login....');
 		store.dispatch(actions.login(user.uid));
+		console.log('actions.startAddTodos....');
+		store.dispatch(actions.startAddTodos());
+		console.log('actions.hashHistory....');
 		hashHistory.push('/todos');
 	}else{
 		store.dispatch(actions.logout());
@@ -20,7 +24,7 @@ firebase.auth().onAuthStateChanged((user)=>{
 });
 //var TodoApp = require('todoapp.jsx');
 
-store.dispatch(actions.startAddTodos());
+
 //by default require does not know how to load css files so 
 //you must use the css loader css! and then inject it using style!
 //require('style!css!foundation-sites/dist/foundation.min.css');

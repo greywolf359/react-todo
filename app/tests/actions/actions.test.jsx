@@ -34,21 +34,7 @@ describe('actions', ()=>{
 		expect(res).toEqual(action);
 	})
 
-	it('should create todo and disatch ADD_TODO', (done)=>{
-		const store = createMockStore({});
-		const todoText = 'my todo item';
-
-		store.dispatch(actions.startAddTodo(todoText)).then(()=>{
-			const actions = store.getActions();
-			expect(actions[0]).toInclude({
-				type: 'ADD_TODO'
-			});
-			expect(actions[0].todo).toInclude({
-				todo: todoText
-			});
-			done();
-		}).catch(done);
-	})
+	
 
 	it('should generate add todo object', ()=>{
 		var todos={
@@ -108,22 +94,29 @@ describe('actions', ()=>{
 
 describe("test with firebase todos", ()=>{
 	var testTodoRef;
+	var uid;
+	var todosRef;
 
 	beforeEach((done) =>{
-		var todosRef = firebaseRef.child('todos');
-		todosRef.remove().then(()=>{
-			testTodoRef = firebaseRef.child('todos').push();
-			
+		firebase.auth().signInAnonymously().then((user)=>{
+			uid = user.uid;
+			todosRef = firebaseRef.child(`users/${uid}/todos`);
+			return todosRef.remove();
+		}).then(()=>{
+			testTodoRef = todosRef.push();
+		})
+
+
 			testTodoRef.set({
 				todo: 'something to do',
 				completed: false,
 				createAt: 12345556
 			})
-		})
-		.then(() => done())
-		.catch(done);
+			.then(() => done())
+			.catch(done);
 	});
-		
+
+	
 	afterEach((done) =>{
 		testTodoRef.remove().then(()=>{
 			done();
@@ -131,7 +124,7 @@ describe("test with firebase todos", ()=>{
 	});
 	
 	it('should gettodo back from startAddTodo', (done)=>{
-		const store = createMockStore({});
+		const store = createMockStore({auth:{uid}});
 		const action = actions.startAddTodo();
 
 		store.dispatch(action).then(()=>{
@@ -144,10 +137,26 @@ describe("test with firebase todos", ()=>{
 		//expect(mockActions[0].todos.length).toEqual(1);
 		//expect(mockActions[0].todos[0].todo).toEqual('something to do');
 		done();
+	});
+
+	it('should create todo and disatch ADD_TODO', (done)=>{
+		const store = createMockStore({auth:{uid}});
+		const todoText = 'my todo item';
+
+		store.dispatch(actions.startAddTodo(todoText)).then(()=>{
+			const actions = store.getActions();
+			expect(actions[0]).toInclude({
+				type: 'ADD_TODO'
+			});
+			expect(actions[0].todo).toInclude({
+				todo: todoText
+			});
+			done();
+		}).catch(done);
 	})
 
 	it('should toggle todo and dispatch UPDATE_TODO action', (done) => {
-	  const store = createMockStore({});
+	  const store = createMockStore({auth:{uid}});
       const action = actions.startToggleTodo(testTodoRef.key, true);
 
       store.dispatch(action).then(() => {
